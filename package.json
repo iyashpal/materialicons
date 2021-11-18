@@ -1,0 +1,20 @@
+{
+  "name": "googleicons",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "Yash Pal <iyashpal.dev@gmail.com>",
+  "files": [
+    "outline/",
+    "solid/",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm run build:vue && npm run build:react",
+    "build:vue": "node ./scripts/build.js vue",
+    "build:react": "node ./scripts/build.js react"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0"
+  }
+}
