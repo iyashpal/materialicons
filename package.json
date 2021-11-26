@@ -5,8 +5,11 @@
   "license": "MIT",
   "author": "Yash Pal <iyashpal.dev@gmail.com>",
   "files": [
+    "duotone/",
     "outline/",
+    "round/",
     "solid/",
+    "sharp/",
     "README.md"
   ],
   "scripts": {
@@ -15,6 +18,12 @@
     "build:react": "node ./scripts/build.js react"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0"
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-react-jsx": "^7.16.0",
+    "@svgr/core": "^5.5.0",
+    "@vue/compiler-dom": "^3.2.23",
+    "camelcase": "^6.2.1",
+    "rimraf": "^3.0.2",
+    "svgo": "^2.8.0"
   }
 }
