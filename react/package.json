@@ -1,5 +1,6 @@
 {
   "name": "@googleicons/react",
+  "license": "MIT",
   "version": "1.0.0",
   "description": "",
   "repository": {
@@ -7,9 +8,21 @@
     "url": "git+https://github.com/iyashpal/googleicons.git"
   },
   "author": "Yash Pal <iyashpal.dev@gmail.com>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/iyashpal/googleicons/issues"
   },
-  "homepage": "https://github.com/iyashpal/googleicons#readme"
+  "homepage": "https://github.com/iyashpal/googleicons#readme",
+  "files": [
+    "duotone",
+    "outline",
+    "round",
+    "sharp",
+    "solid"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": ">= 16"
+  }
 }
