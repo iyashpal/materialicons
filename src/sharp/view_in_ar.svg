@@ -1,0 +1,7 @@
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 1V3H21V6H23V1H18Z" fill="currentColor" />
+    <path d="M21 21H18V23H23V18H21V21Z" fill="currentColor" />
+    <path d="M3 3H6V1H1V6H3V3Z" fill="currentColor" />
+    <path d="M3 18H1V23H6V21H3V18Z" fill="currentColor" />
+    <path d="M19 7.97L12 3.94L5 7.97V16.03L12 20.06L19 16.03V7.97ZM11 17.17L7 14.87V10.24L11 12.57V17.17ZM12 10.84L8.04 8.53L12 6.25L15.96 8.53L12 10.84ZM17 14.87L13 17.17V12.57L17 10.24V14.87Z" fill="currentColor" />
+</svg>

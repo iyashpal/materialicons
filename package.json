@@ -5,17 +5,19 @@
   "license": "MIT",
   "author": "Yash Pal <iyashpal.dev@gmail.com>",
   "files": [
-    "duotone/",
     "outline/",
     "round/",
     "solid/",
     "sharp/",
+    "twotone/",
     "README.md"
   ],
   "scripts": {
     "build": "npm run build:vue && npm run build:react",
     "build:vue": "node ./scripts/build.js vue",
-    "build:react": "node ./scripts/build.js react"
+    "build:react": "node ./scripts/build.js react",
+    "build-outline": "rimraf ./optimized/outline ./optimized/outline && svgo --config=svgo.outline.js -f ./src/outline -o ./optimized/outline",
+    "build-solid": "rimraf ./optimized/solid ./optimized/solid && svgo --config=svgo.solid.js -f ./src/solid -o ./optimized/solid"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

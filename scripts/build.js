@@ -142,7 +142,7 @@ function build(package) {
 
     Promise.all([
 
-        RmRf(`./${package}/duotone/*`),
+        RmRf(`./${package}/twotone/*`),
 
         RmRf(`./${package}/outline/*`),
 
@@ -150,13 +150,13 @@ function build(package) {
 
         RmRf(`./${package}/sharp/*`),
 
-        RmRf(`./${package}/solid/*`),
+        RmRf(`./${package}/filled/*`),
 
     ])
 
         .then(() => Promise.all([
-            generateIcons(package, 'duotone', 'cjs'),
-            generateIcons(package, 'duotone', 'esm'),
+            generateIcons(package, 'twotone', 'cjs'),
+            generateIcons(package, 'twotone', 'esm'),
 
             generateIcons(package, 'outline', 'cjs'),
             generateIcons(package, 'outline', 'esm'),
@@ -167,12 +167,12 @@ function build(package) {
             generateIcons(package, 'sharp', 'cjs'),
             generateIcons(package, 'sharp', 'esm'),
 
-            generateIcons(package, 'solid', 'cjs'),
-            generateIcons(package, 'solid', 'esm'),
+            generateIcons(package, 'filled', 'cjs'),
+            generateIcons(package, 'filled', 'esm'),
 
 
-            fs.writeFile(`./${package}/duotone/package.json`, `{"module": "./esm/index.js"}`, 'utf8'),
-            fs.writeFile(`./${package}/duotone/esm/package.json`, `{"type": "module"}`, 'utf8'),
+            fs.writeFile(`./${package}/twotone/package.json`, `{"module": "./esm/index.js"}`, 'utf8'),
+            fs.writeFile(`./${package}/twotone/esm/package.json`, `{"type": "module"}`, 'utf8'),
 
             fs.writeFile(`./${package}/outline/package.json`, `{"module": "./esm/index.js"}`, 'utf8'),
             fs.writeFile(`./${package}/outline/esm/package.json`, `{"type": "module"}`, 'utf8'),
@@ -183,8 +183,8 @@ function build(package) {
             fs.writeFile(`./${package}/sharp/package.json`, `{"module": "./esm/index.js"}`, 'utf8'),
             fs.writeFile(`./${package}/sharp/esm/package.json`, `{"type": "module"}`, 'utf8'),
 
-            fs.writeFile(`./${package}/solid/package.json`, `{"module": "./esm/index.js"}`, 'utf8'),
-            fs.writeFile(`./${package}/solid/esm/package.json`, `{"type": "module"}`, 'utf8'),
+            fs.writeFile(`./${package}/filled/package.json`, `{"module": "./esm/index.js"}`, 'utf8'),
+            fs.writeFile(`./${package}/filled/esm/package.json`, `{"type": "module"}`, 'utf8'),
 
         ]))
 
