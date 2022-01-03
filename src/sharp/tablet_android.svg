@@ -1,6 +1,6 @@
 <svg width="26" height="32" viewBox="0 0 26 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_425_86558)">
-<path d="M22 0H4V24H22V0ZM15 22H11V21H15V22ZM20.25 19H5.75V3H20.25V19Z" fill="black"/>
+<path d="M22 0H4V24H22V0ZM15 22H11V21H15V22ZM20.25 19H5.75V3H20.25V19Z" fill="currentColor"/>
 </g>
 <defs>
 <filter id="filter0_d_425_86558" x="-3" y="0" width="32" height="32" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
