@@ -1,28 +1,28 @@
 {
-  "name": "@googleicons/vue",
-  "license": "MIT",
-  "version": "1.0.2",
-  "description": "",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iyashpal/googleicons.git"
-  },
-  "author": "Yash Pal <iyashpal.dev@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/iyashpal/googleicons/issues"
-  },
-  "homepage": "https://github.com/iyashpal/googleicons#readme",
-  "files": [
-    "duotone",
-    "outline",
-    "round",
-    "sharp",
-    "solid"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "peerDependencies": {
-    "vue": ">= 3"
-  }
+    "name": "@googleicons/vue",
+    "license": "MIT",
+    "version": "0.0.1",
+    "description": "",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iyashpal/googleicons.git"
+    },
+    "author": "Yash Pal <iyashpal.dev@gmail.com>",
+    "bugs": {
+        "url": "https://github.com/iyashpal/googleicons/issues"
+    },
+    "homepage": "https://github.com/iyashpal/googleicons#readme",
+    "files": [
+        "filled",
+        "outline",
+        "round",
+        "sharp",
+        "twotone"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {
+        "vue": ">= 3"
+    }
 }

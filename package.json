@@ -14,10 +14,9 @@
   ],
   "scripts": {
     "build": "npm run build:vue && npm run build:react",
-    "build:vue": "node ./scripts/build.js vue",
-    "build:react": "node ./scripts/build.js react",
-    "build-outline": "rimraf ./optimized/outline ./optimized/outline && svgo --config=svgo.outline.js -f ./src/outline -o ./optimized/outline",
-    "build-solid": "rimraf ./optimized/solid ./optimized/solid && svgo --config=svgo.solid.js -f ./src/solid -o ./optimized/solid"
+    "build:vue": "npm run script vue filled && npm run script vue outline && npm run script vue round && npm run script vue sharp && npm run script vue twotone",
+    "build:react": "npm run script react filled && npm run script react outline && npm run script react round && npm run script react sharp && npm run script react twotone",
+    "script": "node ./scripts/build.js"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

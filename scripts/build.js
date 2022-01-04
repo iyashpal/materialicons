@@ -17,7 +17,9 @@ const { compile: compileVue } = require('@vue/compiler-dom')
 
 let transform = {
     react: async (svg, componentName, format) => {
+
         let component = await svgr(svg, {}, { componentName })
+
         let { code } = await babel.transformAsync(component, {
             plugins: [[require('@babel/plugin-transform-react-jsx'), { useBuiltIns: true }]],
         })
@@ -34,9 +36,7 @@ let transform = {
 
 
     vue: (svg, componentName, format) => {
-        let { code } = compileVue(svg, {
-            mode: 'module',
-        })
+        let { code } = compileVue(svg, { mode: 'module' })
 
         if (format === 'esm') {
             return code.replace('export function', 'export default function')
@@ -76,7 +76,7 @@ async function getIcons(style) {
 
 async function generateIcons(package, style, format) {
 
-    let outDir = `./${package}/${style}${format === 'esm' ? '/esm' : ''}`;
+    let outDir = `./${package}/${style}/${format === 'esm' ? '/esm' : ''}`;
 
 
     await fs.mkdir(outDir, { recursive: true }, (error) => {
@@ -136,55 +136,19 @@ function exportAll(icons, format, includeExtension = true) {
         .join('\n')
 }
 
-function build(package) {
+function build(package, style) {
     console.log(`Building ${package} package...`)
 
 
-    Promise.all([
-
-        RmRf(`./${package}/twotone/*`),
-
-        RmRf(`./${package}/outline/*`),
-
-        RmRf(`./${package}/round/*`),
-
-        RmRf(`./${package}/sharp/*`),
-
-        RmRf(`./${package}/filled/*`),
-
-    ])
+    Promise.all([RmRf(`./${package}/${style}/*`)])
 
         .then(() => Promise.all([
-            generateIcons(package, 'twotone', 'cjs'),
-            generateIcons(package, 'twotone', 'esm'),
-
-            generateIcons(package, 'outline', 'cjs'),
-            generateIcons(package, 'outline', 'esm'),
-
-            generateIcons(package, 'round', 'cjs'),
-            generateIcons(package, 'round', 'esm'),
-
-            generateIcons(package, 'sharp', 'cjs'),
-            generateIcons(package, 'sharp', 'esm'),
-
-            generateIcons(package, 'filled', 'cjs'),
-            generateIcons(package, 'filled', 'esm'),
+            generateIcons(package, style, 'cjs'),
+            generateIcons(package, style, 'esm'),
 
 
-            fs.writeFile(`./${package}/twotone/package.json`, `{"module": "./esm/index.js"}`, 'utf8'),
-            fs.writeFile(`./${package}/twotone/esm/package.json`, `{"type": "module"}`, 'utf8'),
-
-            fs.writeFile(`./${package}/outline/package.json`, `{"module": "./esm/index.js"}`, 'utf8'),
-            fs.writeFile(`./${package}/outline/esm/package.json`, `{"type": "module"}`, 'utf8'),
-
-            fs.writeFile(`./${package}/round/package.json`, `{"module": "./esm/index.js"}`, 'utf8'),
-            fs.writeFile(`./${package}/round/esm/package.json`, `{"type": "module"}`, 'utf8'),
-
-            fs.writeFile(`./${package}/sharp/package.json`, `{"module": "./esm/index.js"}`, 'utf8'),
-            fs.writeFile(`./${package}/sharp/esm/package.json`, `{"type": "module"}`, 'utf8'),
-
-            fs.writeFile(`./${package}/filled/package.json`, `{"module": "./esm/index.js"}`, 'utf8'),
-            fs.writeFile(`./${package}/filled/esm/package.json`, `{"type": "module"}`, 'utf8'),
+            fs.writeFile(`./${package}/${style}/package.json`, `{"module": "./esm/index.js"}`, 'utf8'),
+            fs.writeFile(`./${package}/${style}/esm/package.json`, `{"type": "module"}`, 'utf8'),
 
         ]))
 
@@ -199,11 +163,17 @@ function build(package) {
 
 
 
-let [package] = process.argv.slice(2)
+
+let [package, style] = process.argv.slice(2);
+
 
 if (!package) {
     throw Error('Please specify a package')
 }
 
+if (!['twotone', 'outline', 'round', 'sharp', 'filled'].includes(style)) {
+    throw Error("Please select a correct style")
+}
 
-build(package)
+
+build(package, style)
