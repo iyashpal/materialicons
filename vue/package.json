@@ -1,17 +1,17 @@
 {
-    "name": "@googleicons/vue",
+    "name": "@materialicons/vue",
     "license": "MIT",
-    "version": "4.0.0",
+    "version": "1.0.0",
     "description": "",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/iyashpal/googleicons.git"
+        "url": "git+https://github.com/iyashpal/materialicons.git"
     },
     "author": "Yash Pal <iyashpal.dev@gmail.com>",
     "bugs": {
-        "url": "https://github.com/iyashpal/googleicons/issues"
+        "url": "https://github.com/iyashpal/materialicons/issues"
     },
-    "homepage": "https://github.com/iyashpal/googleicons#readme",
+    "homepage": "https://github.com/iyashpal/materialicons#readme",
     "files": [
         "filled",
         "outline",
